@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action='/' method='post'>
+        <input type="hidden" name='update' value="update"><br>
+        <input type='submit' value="обновить базу">
+    </form>
+    <form action='/' method='post'>
+        <textarea name='numbers'></textarea><br>
+        <input type='submit' value="искать">
+    </form>
+
+    <h5>результаты поиска</h5>
+    проверено {{.CheckNumbersCount}} паспортов<br> из них недействительные:<br> {{range .WrongNumbers}}{{if .}}{{.}}<br>{{end}} {{end}}
+</body>
+
+</html>

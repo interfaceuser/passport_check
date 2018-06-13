@@ -1,0 +1,19 @@
+как запускать:
+в системе должен быть установлен golang
+в папке проекта выполнить go build main.go
+полученный исполняемый файл нужно настроить на запуск при требуемых условиях(например при старте компьютера)
+по умолчанию веб сервис доступен на порту 8080 адреса 127.0.0.1(локальный компьютер)
+порт веб сервиса можно поправить изменив в файле main.go константу serverPort
+по умолчанию используется БД mysql
+параметры соединения можно изменить поправив в файле main.go константы db*
+код создания таблицы в БД:
+CREATE TABLE passport_check.passports (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  number VARCHAR(10) NOT NULL,
+  PRIMARY KEY (id)
+)
+ENGINE = INNODB
+AVG_ROW_LENGTH = 8192
+CHARACTER SET utf8
+COLLATE utf8_general_ci
+ROW_FORMAT = DYNAMIC;
